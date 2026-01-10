@@ -1,1 +1,10 @@
-<Solution />
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="LeagieManager.Application/LeagueManager.Application.csproj" />
+    <Project Path="LeagueManager.Domain/LeagueManager.Domain.csproj" />
+    <Project Path="LeagueManager.Infrastructure/LeagueManager.Infrastructure.csproj" />
+    <Project Path="LeagueManager.Persentation/LeagueManager.Persentation.csproj" />
+    <Project Path="LeagueManager.Persistence/LeagueManager.Persistence.csproj" />
+    <Project Path="LeagueManager.WebApi/LeagueManager.WebApi.csproj" />
+  </Folder>
+</Solution>

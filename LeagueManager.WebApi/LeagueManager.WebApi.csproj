@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LeagieManager.Application\LeagueManager.Application.csproj" />
+    <ProjectReference Include="..\LeagueManager.Infrastructure\LeagueManager.Infrastructure.csproj" />
+    <ProjectReference Include="..\LeagueManager.Persentation\LeagueManager.Persentation.csproj" />
+    <ProjectReference Include="..\LeagueManager.Persistence\LeagueManager.Persistence.csproj" />
+  </ItemGroup>
+
+</Project>

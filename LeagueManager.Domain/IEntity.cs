@@ -1,6 +1,6 @@
 ﻿namespace LeagueManager.Domain
 {
-    public class Class1
+    public interface IEntity
     {
 
     }

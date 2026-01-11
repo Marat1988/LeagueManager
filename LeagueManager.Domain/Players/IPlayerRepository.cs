@@ -6,7 +6,7 @@ namespace LeagueManager.Domain.Players
 {
     public interface IPlayerRepository
     {
-        Task TaskAsync(Player player);
+        Task AddAsync(Player player);
         Task<Player> GetByIdAsync (Guid id);
         Task<int> CommitAsync();
     }

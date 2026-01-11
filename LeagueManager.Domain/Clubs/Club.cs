@@ -11,7 +11,7 @@ namespace LeagueManager.Domain.Clubs
     {
         public string Name { get; private set; }
         public string PhotoUrl { get; private set; }
-        public int FiundedYear { get; private set; }
+        public int FoundedYear { get; private set; }
         public string WebSiteUrl { get; private set; }
         public bool? IsDeleted { get; private set; }
         public Address Address { get; private set; }
@@ -64,6 +64,15 @@ namespace LeagueManager.Domain.Clubs
             Name = name;
             PhotoUrl = photoUrl;
             WebSiteUrl = websiteUrl;
+
+            UpdatedBy = updatedBy;
+            UpdatedDate = DateTime.UtcNow;
+        }
+
+        public void MarkAsDeleted(Guid? updatedBy)
+        {
+            IsDeleted = true;
+
             UpdatedBy = updatedBy;
             UpdatedDate = DateTime.UtcNow;
         }

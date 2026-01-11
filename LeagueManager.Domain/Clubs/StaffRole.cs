@@ -6,10 +6,10 @@ namespace LeagueManager.Domain.Clubs
 {
     public enum StaffRole
     {
-        Coach,
-        AssistanctCoach,
-        Manger,
-        Physio,
-        Analyst
+        Coach = 1,
+        AssistanctCoach = 2,
+        Manger = 3,
+        Physio = 4,
+        Analyst = 5
     }
 }

@@ -6,9 +6,9 @@ namespace LeagueManager.Domain.Players
 {
     public enum PlayerPosition
     {
-        GoalKeepper,
-        Defender,
-        Midfielder,
-        Forward
+        GoalKeepper = 1,
+        Defender = 2,
+        Midfielder = 3,
+        Forward = 4
     }
 }

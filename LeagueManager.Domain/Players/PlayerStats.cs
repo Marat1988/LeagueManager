@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LeagueManager.Domain.Players
 {
-    public class PlayerStarts(
+    public class PlayerStats(
         int Apperances,
         int Goals,
         int Assists        

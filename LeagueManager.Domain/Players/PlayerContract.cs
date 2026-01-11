@@ -10,7 +10,5 @@ namespace LeagueManager.Domain.Players
             DateTime? StartDate,
             DateTime? EndDate,
             int SalaryPerMonth
-        ): IValueObject
-    {
-    }
+        ): IValueObject;
 }

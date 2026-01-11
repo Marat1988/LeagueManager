@@ -11,17 +11,16 @@ namespace LeagueManager.Domain.Clubs
     {
         public string Name { get; private set; }
         public string PhotoUrl { get; private set; }
-        public int FoundedYear { get; private set; }
-        public string WebsiteUrl { get; private set; }
+        public int FiundedYear { get; private set; }
+        public string WebSiteUrl { get; private set; }
         public bool? IsDeleted { get; private set; }
-        public SocialLinks Links { get; private set; }
         public Address Address { get; private set; }
-
-        public List<Player> Players { get; private set; } = [];
-
-        public List<StaffMember> StaffMembers { get; private set; } = [];
-
-        public Stadium Stadium { get; private set; }
+        public int? StadiumId { get; private set; }
+        public SocialLinks SocialLinks { get; private set; }
+        public IList<Player> Players { get; private set; } = [];
+        public IList<StaffMember> StaffMembers { get; private set; } = [];
+        public Guid? CreatedBy { get; private set; }
+        public DateTime? CreatedDate { get; private set ; }
         public Guid? UpdatedBy { get; private set; }
         public DateTime? UpdatedDate { get; private set; }
 
@@ -33,43 +32,40 @@ namespace LeagueManager.Domain.Clubs
         private Club(
             string name,
             string photoUrl,
-            int foundedYear,
-            string websiteUrl)
+            string webSiteUrl,
+            Guid? createdBy)
         {
+            Id = Guid.NewGuid();
+
             Name = name;
             PhotoUrl = photoUrl;
-            FoundedYear = foundedYear;
-            WebsiteUrl = websiteUrl;
+            WebSiteUrl = webSiteUrl;
+
+            CreatedBy = createdBy;
+            CreatedDate = DateTime.UtcNow;
         }
 
         public static Club Create(
             string name,
             string photoUrl,
-            int foundedYear,
-            string websiteUrl
-            )
+            string websiteUrl,
+            Guid? createdBy)
         {
-            return new Club(name, photoUrl, foundedYear, websiteUrl);
+            return new Club(name, photoUrl, websiteUrl, createdBy);
         }
 
         public void Update(
             string name,
             string photoUrl,
-            string webSiteUrl,
+            string websiteUrl,
             Guid? updatedBy
             )
         {
             Name = name;
             PhotoUrl = photoUrl;
-            WebsiteUrl= webSiteUrl;
+            WebSiteUrl = websiteUrl;
             UpdatedBy = updatedBy;
-            UpdatedDate = DateTime.UtcNow;  
-
-        }
-
-        public void MarkAsDeleted()
-        {
-            IsDeleted = true;
+            UpdatedDate = DateTime.UtcNow;
         }
 
         public void UpdateAddress(Address address)
@@ -77,12 +73,12 @@ namespace LeagueManager.Domain.Clubs
             Address = address;
         }
 
-        public void UpdateSocialLink(SocialLinks socialLinks)
+        public void UpdateSocialLinks(SocialLinks socialLinks)
         {
-            Links = socialLinks;
+            SocialLinks = socialLinks;
         }
 
-        public void AddPlayer(Player player)
+        public void AppPlayer(Player player)
         {
             Players.Add(player);
         }
@@ -90,6 +86,16 @@ namespace LeagueManager.Domain.Clubs
         public void RemovePlayer(Player player)
         {
             Players.Remove(player);
+        }
+
+        public void AddStaffMember(StaffMember staffMember)
+        {
+            StaffMembers.Add(staffMember);
+        }
+
+        public void RemoveStaffMember(StaffMember staffMember)
+        {
+            StaffMembers.Remove(staffMember);
         }
     }
 }

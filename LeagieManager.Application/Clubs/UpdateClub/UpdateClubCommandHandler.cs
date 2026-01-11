@@ -9,9 +9,9 @@ namespace LeagueManager.Application.Clubs.UpdateClub
     public class UpdateClubCommandHandler
         (
             IClubRepository clubRepository
-        ) : ICommandHandler<UpdateClubCommand>
+        ) : ICommandHandler<UpdateClubCommand, int>
     {
-        public async Task Handle(UpdateClubCommand request, CancellationToken cancellationToken)
+        public async Task<int> Handle(UpdateClubCommand request, CancellationToken cancellationToken)
         {
             var club = await clubRepository.GetByIdAsync(request.Id);
             club.Update(request.Name,
@@ -19,7 +19,7 @@ namespace LeagueManager.Application.Clubs.UpdateClub
                 request.WebsiteUrl,
                 request.UpdatedBy
                 );
-            await clubRepository.CommitAsync();
+            return await clubRepository.CommitAsync();
         }
     }
 }

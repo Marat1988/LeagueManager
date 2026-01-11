@@ -12,7 +12,7 @@ builder.Services.AddControllers();
 builder.Services
     .AddApplication()
     .AddInfrastructure()
-    .AddPersistence()
+    .AddPersistence(builder.Configuration)
     .AddPersentation();
 
 

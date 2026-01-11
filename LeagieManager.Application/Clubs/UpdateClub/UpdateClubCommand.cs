@@ -12,5 +12,5 @@ namespace LeagueManager.Application.Clubs.UpdateClub
             string PhotoUrl,
             string WebsiteUrl,
             Guid? UpdatedBy
-        ) : ICommand;
+        ) : ICommand<int>;
 }

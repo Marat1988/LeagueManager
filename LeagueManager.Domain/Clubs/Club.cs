@@ -22,6 +22,8 @@ namespace LeagueManager.Domain.Clubs
         public List<StaffMember> StaffMembers { get; private set; } = [];
 
         public Stadium Stadium { get; private set; }
+        public Guid? UpdatedBy { get; private set; }
+        public DateTime? UpdatedDate { get; private set; }
 
         private Club()
         {
@@ -51,12 +53,18 @@ namespace LeagueManager.Domain.Clubs
         }
 
         public void Update(
+            string name,
             string photoUrl,
-            string webSiteUrl
+            string webSiteUrl,
+            Guid? updatedBy
             )
         {
-            PhotoUrl += photoUrl;
-            WebsiteUrl += webSiteUrl;
+            Name = name;
+            PhotoUrl = photoUrl;
+            WebsiteUrl= webSiteUrl;
+            UpdatedBy = updatedBy;
+            UpdatedDate = DateTime.UtcNow;  
+
         }
 
         public void MarkAsDeleted()

@@ -35,7 +35,7 @@ namespace LeagueManager.Domain.SharedKernal
             Zipcode = zipcode;
         }
 
-        public static Address Cteate(
+        public static Address Create(
             string addressLine1,
             string addressLine2,
             string street,

@@ -2,12 +2,14 @@ using LeagieManager.Infrastructure;
 using LeagieManager.Persentation;
 using LeagieManager.Persistence;
 using LeagueManager.Application;
+using LeagueManager.Persentation.Controllers.Clubs;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddApplicationPart(typeof(ClubsController).Assembly);
 
 builder.Services
     .AddApplication()

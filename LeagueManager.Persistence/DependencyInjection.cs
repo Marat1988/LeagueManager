@@ -17,12 +17,18 @@ namespace LeagieManager.Persistence
             var currentAccembly = typeof(DependencyInjection).Assembly;
             var connectionString = configuration.GetConnectionString("LeagueManager");
 
-            services.AddScoped<ISqlConnectionFactory>(sp => 
+            services.AddScoped<ISqlConnectionFactory>(sp =>
                 new SqlConnectionFactory(connectionString));
 
+
+
             services.AddDbContext<LeagueManagerDbContext>(options =>
-                options.UseSqlServer(connectionString)
-            );
+                options.UseSqlServer(connectionString, sqlOptions => sqlOptions.MigrationsAssembly(currentAccembly)
+
+            ));
+
+
+
 
             services.AddScoped<IClubRepository, ClubRepository>();
 

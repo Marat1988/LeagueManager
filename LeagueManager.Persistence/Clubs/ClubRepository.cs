@@ -1,7 +1,4 @@
 ﻿using LeagueManager.Domain.Clubs;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace LeagueManager.Persistence.Clubs
 {

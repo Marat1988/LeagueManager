@@ -1,4 +1,5 @@
 ﻿
+using LeagueManager.Application.Emails;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace LeagieManager.Persentation

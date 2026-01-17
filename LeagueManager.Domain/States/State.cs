@@ -36,7 +36,7 @@ namespace LeagueManager.Domain.States
             CreatedDate = DateTime.UtcNow;
         }
 
-        public static State Cteate(
+        public static State Create(
             string name,
             string isoCode,
             Guid countryId,

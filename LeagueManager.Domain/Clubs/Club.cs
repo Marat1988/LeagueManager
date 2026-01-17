@@ -16,6 +16,7 @@ namespace LeagueManager.Domain.Clubs
         public bool? IsDeleted { get; private set; }
         public Address Address { get; private set; }
         public int? StadiumId { get; private set; }
+        public Stadium Stadium { get; private set; }
         public SocialLinks SocialLinks { get; private set; }
         public IList<Player> Players { get; private set; } = [];
         public IList<StaffMember> StaffMembers { get; private set; } = [];
